@@ -8,7 +8,7 @@ by the Free Software Foundation, either version 3 of the license, or
 file.
 
 ## Calculated Resistance
-The foot of wire you've received has a theoritical resistance of:
+The foot of wire you've received has a theoretical resistance of:
 Since our goal is consistancy, don't bother calculating it yourself.
 
 ## Program Information
