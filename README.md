@@ -4,7 +4,8 @@
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published 
 by the Free Software Foundation, either version 3 of the license, or
-(at your option) any later version.
+(at your option) any later version. For more information view the LICENSE
+file.
 
 ## Calculated Resistance
 The foot of wire you've received has a theoritical resistance of:
