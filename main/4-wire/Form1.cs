@@ -63,17 +63,17 @@ namespace _4_wire
 
             for (int i = 0; i < 10; i++)
             {
-                noPressure.Add((double) dataGridView1.Rows[i].Cells[0].Value);
-                lightPressure.Add((double) dataGridView1.Rows[i].Cells[1].Value);
-                medPressure.Add((double) dataGridView1.Rows[i].Cells[2].Value);
-                heavyPressure.Add((double) dataGridView1.Rows[i].Cells[3].Value);
+                noPressure.Add(Convert.ToDouble(dataGridView1.Rows[i].Cells[0].Value));
+                lightPressure.Add(Convert.ToDouble(dataGridView1.Rows[i].Cells[1].Value));
+                medPressure.Add(Convert.ToDouble(dataGridView1.Rows[i].Cells[2].Value));
+                heavyPressure.Add(Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value));
             }
 
             for (int i = 0; i < 20; i++)
             {
-                smallCurrent.Add((double) dataGridView1.Rows[i].Cells[5].Value);
-                medCurrent.Add((double) dataGridView1.Rows[i].Cells[6].Value);
-                largeCurrent.Add((double) dataGridView1.Rows[i].Cells[7].Value);
+                smallCurrent.Add(Convert.ToDouble(dataGridView1.Rows[i].Cells[5].Value));
+                medCurrent.Add(Convert.ToDouble(dataGridView1.Rows[i].Cells[6].Value));
+                largeCurrent.Add(Convert.ToDouble(dataGridView1.Rows[i].Cells[7].Value));
             }
 
         }
