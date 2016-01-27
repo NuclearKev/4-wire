@@ -18,3 +18,6 @@ C:\SPB_Data\4-wire\main\4-wire\obj\Debug\_4_wire.Form1.resources
 C:\SPB_Data\4-wire\main\4-wire\obj\Debug\_4_wire.Properties.Resources.resources
 C:\SPB_Data\4-wire\main\4-wire\obj\Debug\4-wire.csproj.GenerateResource.Cache
 C:\SPB_Data\4-wire\main\4-wire\bin\Debug\NationalInstruments.NI4882.dll
+V:\4-wire\main\4-wire\bin\Debug\4-wire.exe.config
+V:\4-wire\main\4-wire\obj\Debug\4-wire.exe
+V:\4-wire\main\4-wire\obj\Debug\4-wire.pdb
