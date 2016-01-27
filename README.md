@@ -14,6 +14,7 @@ Since our goal is consistancy, don't bother calculating it yourself.
 ## Program Information
 In the C# program you will notice a spreadsheet - this is where you should
 enter your data. The labels should be pretty self explanitory.
+NOTE: ENTER THE VALUES IN DECIMAL FORM PLEASE! 
 Don't click on the upload button until you have all the data in filled in
 the spreadsheet. This uploads ALL the data to the database with the correct
 labels and such. Also, the group ID is your groups letter assigned by West.

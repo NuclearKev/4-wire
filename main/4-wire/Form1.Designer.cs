@@ -75,9 +75,9 @@
             this.SmallCurrentRes,
             this.MediumCurrentRes,
             this.LargeCurrentRes});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 58);
+            this.dataGridView1.Location = new System.Drawing.Point(103, 58);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(844, 387);
+            this.dataGridView1.Size = new System.Drawing.Size(843, 513);
             this.dataGridView1.TabIndex = 2;
             // 
             // NoPressure
@@ -131,7 +131,7 @@
             // 
             // uploadButton
             // 
-            this.uploadButton.Location = new System.Drawing.Point(781, 17);
+            this.uploadButton.Location = new System.Drawing.Point(871, 17);
             this.uploadButton.Name = "uploadButton";
             this.uploadButton.Size = new System.Drawing.Size(75, 23);
             this.uploadButton.TabIndex = 4;
@@ -153,7 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 459);
+            this.ClientSize = new System.Drawing.Size(1025, 583);
             this.Controls.Add(this.powerSupplyButtons);
             this.Controls.Add(this.uploadButton);
             this.Controls.Add(this.label1);
