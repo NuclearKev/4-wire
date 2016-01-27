@@ -44,6 +44,11 @@ namespace _4_wire
             dmm2Res = new List<double>();
             dmmVolt = new List<double>();
             dmmCurrent = new List<double>();
+
+            for (int i = 0; i < 20; i++)
+            {
+                this.dataGridView1.Rows.Add();
+            }
         }
 
         private void uploadButton_Click(object sender, EventArgs e)

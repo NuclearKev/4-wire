@@ -31,9 +31,6 @@
             this.wire4Button = new System.Windows.Forms.Button();
             this.IDTextBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.uploadButton = new System.Windows.Forms.Button();
-            this.powerSupplyButtons = new System.Windows.Forms.Button();
             this.NoPressure = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LightPressure = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MediumPressure = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +39,9 @@
             this.SmallCurrentRes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MediumCurrentRes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LargeCurrentRes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.uploadButton = new System.Windows.Forms.Button();
+            this.powerSupplyButtons = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,6 +53,7 @@
             this.wire4Button.TabIndex = 0;
             this.wire4Button.Text = "4-Wire";
             this.wire4Button.UseVisualStyleBackColor = true;
+            this.wire4Button.Click += new System.EventHandler(this.wire4Button_Click);
             // 
             // IDTextBox1
             // 
@@ -78,35 +79,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(844, 387);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(216, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Group ID";
-            // 
-            // uploadButton
-            // 
-            this.uploadButton.Location = new System.Drawing.Point(781, 17);
-            this.uploadButton.Name = "uploadButton";
-            this.uploadButton.Size = new System.Drawing.Size(75, 23);
-            this.uploadButton.TabIndex = 4;
-            this.uploadButton.Text = "Upload";
-            this.uploadButton.UseVisualStyleBackColor = true;
-            this.uploadButton.Click += new System.EventHandler(this.uploadButton_Click);
-            // 
-            // powerSupplyButtons
-            // 
-            this.powerSupplyButtons.Location = new System.Drawing.Point(103, 12);
-            this.powerSupplyButtons.Name = "powerSupplyButtons";
-            this.powerSupplyButtons.Size = new System.Drawing.Size(89, 23);
-            this.powerSupplyButtons.TabIndex = 5;
-            this.powerSupplyButtons.Text = "Power Supply";
-            this.powerSupplyButtons.UseVisualStyleBackColor = true;
-            this.powerSupplyButtons.Click += new System.EventHandler(this.powerSupplyButtons_Click);
             // 
             // NoPressure
             // 
@@ -147,6 +119,35 @@
             // 
             this.LargeCurrentRes.HeaderText = "Large Current Resistance";
             this.LargeCurrentRes.Name = "LargeCurrentRes";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(216, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Group ID";
+            // 
+            // uploadButton
+            // 
+            this.uploadButton.Location = new System.Drawing.Point(781, 17);
+            this.uploadButton.Name = "uploadButton";
+            this.uploadButton.Size = new System.Drawing.Size(75, 23);
+            this.uploadButton.TabIndex = 4;
+            this.uploadButton.Text = "Upload";
+            this.uploadButton.UseVisualStyleBackColor = true;
+            this.uploadButton.Click += new System.EventHandler(this.uploadButton_Click);
+            // 
+            // powerSupplyButtons
+            // 
+            this.powerSupplyButtons.Location = new System.Drawing.Point(103, 12);
+            this.powerSupplyButtons.Name = "powerSupplyButtons";
+            this.powerSupplyButtons.Size = new System.Drawing.Size(89, 23);
+            this.powerSupplyButtons.TabIndex = 5;
+            this.powerSupplyButtons.Text = "Power Supply";
+            this.powerSupplyButtons.UseVisualStyleBackColor = true;
+            this.powerSupplyButtons.Click += new System.EventHandler(this.powerSupplyButtons_Click);
             // 
             // Form1
             // 
