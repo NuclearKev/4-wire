@@ -29,27 +29,61 @@ namespace _4_wire
 {
     public partial class Form1 : Form
     {
-        DMM dmm = new DMM(1);
-        List<float> dmmRes;
+        DMM dmm1 = new DMM(1); //used for 4-wire and voltage
+        DMM dmm2 = new DMM(2); //used for current
+        List<double> dmmRes;
+        List<double> dmmVolt;
+        List<double> dmmCurrent;
 
         public Form1()
         {
             InitializeComponent();
 
-            dmmRes = new List<float>();
+            dmmRes = new List<double>();
+            dmmVolt = new List<double>();
+            dmmCurrent = new List<double>();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {           
+        private void uploadButton_Click(object sender, EventArgs e)
+        {
+            double avgLeadRes = (double) dataGridView1.Rows[0].Cells[0].Value;
+            double smallCurrent = (double)dataGridView1.Rows[0].Cells[6].Value;
+            double medCurrent = (double)dataGridView1.Rows[0].Cells[7].Value;
+            double largeCurrent = (double)dataGridView1.Rows[0].Cells[8].Value;
+            var noPressure = new List<double>();
+            var lightPressure = new List<double>();
+            var medPressure = new List<double>();
+            var heavyPressure = new List<double>();
+
+
+
+        }
+
+        private void wire4Button_Click(object sender, EventArgs e)
+        {
             for (int i = 0; i < 20; i++) //5 minutes
             {
-                dmmRes.Add(dmm.measure4Wire());
+                dmmRes.Add(dmm1.measure4Wire());
 
-                textBox1.Text += dmmRes[i] + ", ";
+                this.dataGridView1.Rows[i].Cells[5].Value = dmmRes[i];
 
                 Thread.Sleep(15000);
-            }            
+            } 
         }
+
+        private void powerSupplyButtons_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 20; i++) //5 minutes
+            {
+                dmmVolt.Add(dmm1.measureVolt());
+                dmmCurrent.Add(dmm2.measureCurrent());
+
+                this.dataGridView1.Rows[i].Cells[5].Value = dmmRes[i];
+
+                Thread.Sleep(15000);
+            } 
+        }
+
     }
 
     /* Thanks Jonny */
@@ -63,23 +97,61 @@ namespace _4_wire
         }
 
         //Does exactly what you think it should
-        public float measure4Wire()
+        public double measure4Wire()
         {
             device.Write("MEAS:FRES?");
             var str = device.ReadString(); //reads value from DMM
-            float f = 0.0F;
+            double d = 0.0;
 
             /* If it cannot parse the str then try and measure again */
             try
             {
-                f = float.Parse(str);
+                d = double.Parse(str);
             }
             catch
             {
                 //weird error look at dmm
-                f = this.measure4Wire();
+                d = this.measure4Wire();
             }
-            return f;
+            return d;
+        }
+
+        public double measureVolt()
+        {
+            device.Write("MEAS:VOLT?");
+            var str = device.ReadString(); //reads value from DMM
+            double d = 0.0;
+
+            /* If it cannot parse the str then try and measure again */
+            try
+            {
+                d = double.Parse(str);
+            }
+            catch
+            {
+                //weird error look at dmm
+                d = this.measure4Wire();
+            }
+            return d;
+        }
+
+        public double measureCurrent()
+        {
+            device.Write("MEAS:CUR?");
+            var str = device.ReadString(); //reads value from DMM
+            double d = 0.0;
+
+            /* If it cannot parse the str then try and measure again */
+            try
+            {
+                d = double.Parse(str);
+            }
+            catch
+            {
+                //weird error look at dmm
+                d = this.measure4Wire();
+            }
+            return d;
         }
     }
 }
