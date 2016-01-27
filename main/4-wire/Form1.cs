@@ -31,7 +31,8 @@ namespace _4_wire
     {
         DMM dmm1 = new DMM(1); //used for 4-wire and voltage
         DMM dmm2 = new DMM(2); //used for current
-        List<double> dmmRes;
+        List<double> dmm1Res; //4-wire resistances
+        List<double> dmm2Res; 
         List<double> dmmVolt;
         List<double> dmmCurrent;
 
@@ -39,23 +40,33 @@ namespace _4_wire
         {
             InitializeComponent();
 
-            dmmRes = new List<double>();
+            dmm1Res = new List<double>();
+            dmm2Res = new List<double>();
             dmmVolt = new List<double>();
             dmmCurrent = new List<double>();
         }
 
         private void uploadButton_Click(object sender, EventArgs e)
         {
-            double avgLeadRes = (double) dataGridView1.Rows[0].Cells[0].Value;
-            double smallCurrent = (double)dataGridView1.Rows[0].Cells[6].Value;
-            double medCurrent = (double)dataGridView1.Rows[0].Cells[7].Value;
-            double largeCurrent = (double)dataGridView1.Rows[0].Cells[8].Value;
+            var smallCurrent = new List<double>();
+            var medCurrent = new List<double>();
+            var largeCurrent = new List<double>();
             var noPressure = new List<double>();
             var lightPressure = new List<double>();
             var medPressure = new List<double>();
             var heavyPressure = new List<double>();
 
+            for (int i = 0; i < 10; i++)
+            {
+                smallCurrent.Add((double)dataGridView1.Rows[i].Cells[5].Value);
+                medCurrent.Add((double)dataGridView1.Rows[i].Cells[6].Value);
+                largeCurrent.Add((double)dataGridView1.Rows[i].Cells[7].Value);
 
+                noPressure.Add((double)dataGridView1.Rows[i].Cells[0].Value);
+                lightPressure.Add((double)dataGridView1.Rows[i].Cells[1].Value);
+                medPressure.Add((double)dataGridView1.Rows[i].Cells[2].Value);
+                heavyPressure.Add((double)dataGridView1.Rows[i].Cells[3].Value);
+            }
 
         }
 
@@ -63,9 +74,9 @@ namespace _4_wire
         {
             for (int i = 0; i < 20; i++) //5 minutes
             {
-                dmmRes.Add(dmm1.measure4Wire());
+                dmm1Res.Add(dmm1.measure4Wire());
 
-                this.dataGridView1.Rows[i].Cells[5].Value = dmmRes[i];
+                this.dataGridView1.Rows[i].Cells[4].Value = dmm1Res[i];
 
                 Thread.Sleep(15000);
             } 
@@ -73,17 +84,39 @@ namespace _4_wire
 
         private void powerSupplyButtons_Click(object sender, EventArgs e)
         {
+            double currentFlag = dmm2.measureCurrent();
+            int column;
+
+            if (currentFlag > .0005 && currentFlag < .001)
+            {
+                column = 6;
+            }
+            else if (currentFlag > .005 && currentFlag < .010)
+            {
+                column = 7;
+            }
+            else if (currentFlag > .9 && currentFlag < 1.1)
+            {
+                column = 8;
+            }
+            else
+            {
+                column = 6;
+            }
+
+            Thread.Sleep(5000); //give it some time to relax
+
             for (int i = 0; i < 20; i++) //5 minutes
             {
                 dmmVolt.Add(dmm1.measureVolt());
-                dmmCurrent.Add(dmm2.measureCurrent());
+                dmmCurrent.Add(dmm2.measureCurrent()); //measure again so we get the most recent current
+                dmm2Res.Add(dmmVolt[i] / dmmCurrent[i]);
 
-                this.dataGridView1.Rows[i].Cells[5].Value = dmmRes[i];
+                this.dataGridView1.Rows[i].Cells[column].Value = dmm1Res[i];
 
                 Thread.Sleep(15000);
             } 
         }
-
     }
 
     /* Thanks Jonny */
