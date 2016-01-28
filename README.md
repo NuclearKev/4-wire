@@ -48,7 +48,7 @@ resistance, type, and info (optional). Under "resistance" are all the
 resistances; no matter what way you measured it. Under "type" is the method
 in which you measured the resistance (2-wire, 4-wire). Under "info" you will
 see things like NP (No Pressure), LP (Light Pressure), MP (Medium Pressure),
-HP(Heavy Pressure), SC (Small Current), MC (Medium Current), or LC (Large 
+HP (Heavy Pressure), SC (Small Current), MC (Medium Current), or LC (Large 
 Current). If it is blank, this means it was the standard 4-wire measurement.
 NOTE: DO NOT USE THE TIMES IN THE DATABASE FOR YOUR ANALYSIS! The first
 number is measured at time 0 and so on.
