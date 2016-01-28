@@ -107,15 +107,15 @@ namespace _4_wire
 
             if (currentFlag > .0005 && currentFlag < .001)
             {
-                column = 6;
+                column = 5;
             }
             else if (currentFlag > .005 && currentFlag < .010)
             {
-                column = 7;
+                column = 6;
             }
             else if (currentFlag > .9 && currentFlag < 1.1)
             {
-                column = 8;
+                column = 7;
             }
             else
             {
@@ -130,7 +130,7 @@ namespace _4_wire
                 dmmCurrent.Add(dmm2.measureCurrent()); //measure again so we get the most recent current
                 dmm2Res.Add(dmmVolt[i] / dmmCurrent[i]);
 
-                this.dataGridView1.Rows[i].Cells[column].Value = dmm1Res[i];
+                this.dataGridView1.Rows[i].Cells[column].Value = dmm2Res[i];
 
                 Thread.Sleep(15000);
             } 
