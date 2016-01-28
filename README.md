@@ -20,6 +20,7 @@ Don't click on the upload button until you have all the data filled in
 the spreadsheet. This uploads ALL the data to the database with the correct
 labels and such. Also, the group ID is your groups letter assigned by West.
 For example, I'm group J.
+
 Lastly, the "4-wire" button will run an automated 4-wire resistance and 
 place the values in their cells on the spreadsheet. The "Power Supply" button
 will run the power supply automation and place the values where they should go.
