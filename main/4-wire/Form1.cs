@@ -51,8 +51,6 @@ namespace _4_wire
             }
         }
 
-        /* This is written EXTREMELY poorly.. I know. 
-         * However, I don't know how to upload more than 1 row of data at a time */
         private void uploadButton_Click(object sender, EventArgs e)
         {
             var smallCurrent = new List<double>();
