@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="EET321_Lab4">
+  <DataContextMoniker Name="/EET321_Lab4DataContext" />
+  <nestedChildShapes>
+    <classShape Id="c10c8b17-1aea-4c1f-b4db-8283d328c630" absoluteBounds="4, 2, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/EET321_Lab4DataContext/EET321_Lab4Table" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0fb0e6da-f579-4798-8eea-fec0de492801" absoluteBounds="4.015, 2.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

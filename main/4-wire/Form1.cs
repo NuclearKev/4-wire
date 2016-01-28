@@ -51,6 +51,8 @@ namespace _4_wire
             }
         }
 
+        /* This is written EXTREMELY poorly.. I know. 
+         * However, I don't know how to upload more than 1 row of data at a time */
         private void uploadButton_Click(object sender, EventArgs e)
         {
             var smallCurrent = new List<double>();
@@ -60,7 +62,9 @@ namespace _4_wire
             var lightPressure = new List<double>();
             var medPressure = new List<double>();
             var heavyPressure = new List<double>();
-
+            char id = Convert.ToChar(IDTextBox1.Text);
+            
+            /* Grab data from spreadsheet and place in lists */
             for (int i = 0; i < 10; i++)
             {
                 noPressure.Add(Convert.ToDouble(dataGridView1.Rows[i].Cells[0].Value));
@@ -76,6 +80,14 @@ namespace _4_wire
                 largeCurrent.Add(Convert.ToDouble(dataGridView1.Rows[i].Cells[7].Value));
             }
 
+            uploadData(10, noPressure, id, "2-wire", "NP");
+            uploadData(10, lightPressure, id, "2-wire", "LP");
+            uploadData(10, medPressure, id, "2-wire", "MP");
+            uploadData(10, heavyPressure, id, "2-wire", "HP");
+            uploadData(20, dmm1Res, id, "4-wire", " ");
+            uploadData(20, smallCurrent, id, "4-wire", "SC");
+            uploadData(20, medCurrent, id, "4-wire", "MC");
+            uploadData(20, largeCurrent, id, "4-wire", "LC");
         }
 
         private void wire4Button_Click(object sender, EventArgs e)
@@ -109,7 +121,7 @@ namespace _4_wire
             }
             else
             {
-                column = 6;
+                column = 10;
             }
 
             Thread.Sleep(5000); //give it some time to relax
@@ -124,6 +136,24 @@ namespace _4_wire
 
                 Thread.Sleep(15000);
             } 
+        }
+
+        public void uploadData(int n, List<double> resData, char groupID, string type, string info)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                EET321_Lab4DataContext res = new EET321_Lab4DataContext();
+                EET321_Lab4Table data = new EET321_Lab4Table();
+
+                data.GroupID = groupID;  
+                data.DateTime = DateTime.Now;
+                data.Resistance = (float)resData[i];
+                data.Type = type;
+                data.Info = info;
+
+                res.EET321_Lab4Tables.InsertOnSubmit(data);
+                res.SubmitChanges();
+            }
         }
     }
 
@@ -178,7 +208,7 @@ namespace _4_wire
 
         public double measureCurrent()
         {
-            device.Write("MEAS:CUR?");
+            device.Write("MEAS:CURR?");
             var str = device.ReadString(); //reads value from DMM
             double d = 0.0;
 
