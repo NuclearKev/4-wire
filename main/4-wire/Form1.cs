@@ -31,9 +31,10 @@ namespace _4_wire
     {
         DMM dmm1 = new DMM(1); //used for 4-wire and voltage
         DMM dmm2 = new DMM(2); //used for current
+
         List<double> dmm1Res; //4-wire resistances
         List<double> dmm2Res; 
-        List<double> dmmVolt;
+        List<double> dmmVolt;  //if for some reason you wish to see these values
         List<double> dmmCurrent;
 
         public Form1()
