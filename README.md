@@ -33,6 +33,18 @@ on the C# spreadsheet and hit upload. This will put everything into the
 database with the correct labeling. This prevents idiots like Jon Covert
 and I from doing it wrong.
 
+## How to measure in 4-wire mode
+
+To enter 4-wire mode, just hit the shift button then hit the resistance button.
+
+Your leads should be hooked up as shown in the diagram on page 203 of the Agilent 
+34401A user manual. If you're confused, the HI (and HI-sense) are the red terminals 
+towards the top of the DMM (HI-sense being on the left). LO (and LO-sense) are 
+directly below those (LO-sense being on the left). Use the diagram to figure out 
+how to make the measurement.
+
+User Manual: http://cp.literature.agilent.com/litweb/pdf/34401-90004.pdf
+
 ## Database
 * Server: iet2
 
