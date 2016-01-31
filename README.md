@@ -1,11 +1,16 @@
 # 4-wire
 
-## Licensing
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU Lesser General Public License as published 
-by the Free Software Foundation, either version 3 of the license, or
-(at your option) any later version. For more information view the LICENSE
-file.
+## You and Your Wire
+To calculate the theoretical resistance of your wire use the following 
+equation:
+
+R = (p*l) / A
+
+Where p is the resistivity of copper (1.68 x 10^-8 Ohms\*m), l is the length 
+of your wire (**IN METERS**), A is the cross-sectional area of the wire 
+(this is a constant 321.6990877nm^2). It is in your best interest to 
+remeasure your wire to get the exact length rather than assuming it is 
+exactly 1 foot.
 
 ## Program Information
 * DMM1 - Address 1 (4-wire and voltage)
@@ -33,7 +38,7 @@ on the C# spreadsheet and hit upload. This will put everything into the
 database with the correct labeling. This prevents idiots like Jon Covert
 and I from doing it wrong.
 
-## How to measure in 4-wire mode
+## How to Measure in 4-wire Mode
 
 To enter 4-wire mode, just hit the shift button then hit the resistance button.
 
@@ -72,3 +77,9 @@ Info:
 * MC (Medium Current)
 * LC (Large Current)
 
+## Licensing
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published 
+by the Free Software Foundation, either version 3 of the license, or
+(at your option) any later version. For more information view the LICENSE
+file.
