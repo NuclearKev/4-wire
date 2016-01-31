@@ -6,7 +6,7 @@ equation:
 
 R = (p*l) / A
 
-Where p is the resistivity of copper (1.68 x 10^-8 Ohms\*m), l is the length 
+Where p is the resistivity of copper (1.68 x 10^-8 Ohms*m), l is the length 
 of your wire (**IN METERS**), A is the cross-sectional area of the wire 
 (this is a constant 321.6990877nm^2). It is in your best interest to 
 remeasure your wire to get the exact length rather than assuming it is 
