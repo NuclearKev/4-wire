@@ -40,11 +40,11 @@ and I from doing it wrong.
 
 ## How to Measure in 4-wire Mode
 
-To enter 4-wire mode, just hit the shift button then hit the resistance button.
+To enter 4-wire mode, just hit the shift button then hit the Ohmmeter button.
 
 Your leads should be hooked up as shown in the diagram on page 203 of the Agilent 
-34401A user manual. If you're confused, the HI (and HI-sense) are the red terminals 
-towards the top of the DMM (HI-sense being on the left). LO (and LO-sense) are 
+34401A user manual. If you're confused, the HI and HI-sense are the red terminals 
+towards the top of the DMM (HI-sense being on the left). LO and LO-sense are 
 directly below those (LO-sense being on the left). Use the diagram to figure out 
 how to make the measurement.
 
