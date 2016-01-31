@@ -106,6 +106,7 @@ namespace _4_wire
             double currentFlag = dmm2.measureCurrent();
             int column;
 
+	    /* Determine what current range you're in */
             if (currentFlag > .0005 && currentFlag < .001)
             {
                 column = 5;
@@ -120,7 +121,8 @@ namespace _4_wire
             }
             else
             {
-                column = 10;
+                System.Windows.Forms.MessageBox.Show("Error: Out of current range!");
+		return;
             }
 
             Thread.Sleep(5000); //give it some time to relax
