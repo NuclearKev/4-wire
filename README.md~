@@ -1,8 +1,16 @@
 # 4-wire
 
 ## You and Your Wire
-In the email I sent out I said you calculate the resistance yourself; however,
-this is wrong. Just use **.015917Ohms** as your theoretical resistance.
+To calculate the theoretical resistance of your wire use the following 
+equation:
+
+R = (p*l) / A
+
+Where p is the resistivity of copper (1.68 x 10^-8 Ωm), l is the length 
+of your wire (**IN METERS**), A is the cross-sectional area of the wire 
+(this is a constant 321.6990877nm^2). It is in your best interest to 
+remeasure your wire to get the exact length rather than assuming it is 
+exactly 1 foot.
 
 ## Program Information
 * DMM1 - Address 1 (4-wire and voltage)

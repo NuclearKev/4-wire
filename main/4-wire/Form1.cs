@@ -122,7 +122,7 @@ namespace _4_wire
             else
             {
                 System.Windows.Forms.MessageBox.Show("Error: Out of current range!");
-		return;
+		        return;
             }
 
             Thread.Sleep(5000); //give it some time to relax

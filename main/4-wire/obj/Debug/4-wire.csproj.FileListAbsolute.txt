@@ -27,3 +27,4 @@ V:\4-wire\main\4-wire\bin\Debug\4-wire.pdb
 V:\4-wire\main\4-wire\obj\Debug\4-wire.exe
 V:\4-wire\main\4-wire\obj\Debug\4-wire.pdb
 V:\4-wire\main\4-wire\obj\Debug\4-wire.csprojResolveAssemblyReference.cache
+V:\4-wire\main\4-wire\bin\Debug\NationalInstruments.NI4882.dll
