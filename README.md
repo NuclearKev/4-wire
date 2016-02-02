@@ -54,9 +54,9 @@ power supply. Your volt meter would simply be measuring across the wire.
 This is great and all but the power supplies cannot output the small and medium 
 current stably. This means you should construct a simple resistor parallel circuit
 that will cut the current down. In my case I used a 1k and a 20 Ohm resistor with 
-a voltage of 3V and current (from the power supply) of .5A. **NOTE: You might be 
-able to get the smaller currents by setting the voltage low on the power supply. 
-I haven't tried it but it might work.** In the case of using a parallel circuit, 
+a voltage of 3V and current (from the power supply) of .5A. **NOTE: You can 
+get the smaller currents by setting the voltage low on the power supply.** 
+In the case of using a parallel circuit, 
 you want to take the current from the 1k resistor (because the 20 is drawing most
 of the current). So, following the path of current, through the 1k resistor through 
 the ammeter, through the wire, and back to the power supply. Once again, the volt
