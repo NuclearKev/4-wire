@@ -43,7 +43,7 @@ how to make the measurement.
 User Manual: http://cp.literature.agilent.com/litweb/pdf/34401-90004.pdf
 
 ## How to Measure with 2 DMMs and Power Supply
-Dud to popular demand, here's an explanation on how to hook up the 2 DMMs.
+Due to popular demand, here's an explanation on how to hook up the 2 DMMs.
 Imagine the wire is a resistor and you wish to measure the current and voltage 
 of it. So, you'd place your volt meter(DMM1) across it and your ammeter(DMM2) in 
 series with it. For example, the current can travel through the positive 
