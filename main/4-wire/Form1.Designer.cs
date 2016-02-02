@@ -42,6 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.uploadButton = new System.Windows.Forms.Button();
             this.powerSupplyButtons = new System.Windows.Forms.Button();
+            this.pasteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +66,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowDrop = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NoPressure,
@@ -149,11 +151,22 @@
             this.powerSupplyButtons.UseVisualStyleBackColor = true;
             this.powerSupplyButtons.Click += new System.EventHandler(this.powerSupplyButtons_Click);
             // 
+            // pasteButton
+            // 
+            this.pasteButton.Location = new System.Drawing.Point(12, 76);
+            this.pasteButton.Name = "pasteButton";
+            this.pasteButton.Size = new System.Drawing.Size(75, 23);
+            this.pasteButton.TabIndex = 6;
+            this.pasteButton.Text = "Paste";
+            this.pasteButton.UseVisualStyleBackColor = true;
+            this.pasteButton.Click += new System.EventHandler(this.pasteButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 583);
+            this.Controls.Add(this.pasteButton);
             this.Controls.Add(this.powerSupplyButtons);
             this.Controls.Add(this.uploadButton);
             this.Controls.Add(this.label1);
@@ -184,6 +197,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SmallCurrentRes;
         private System.Windows.Forms.DataGridViewTextBoxColumn MediumCurrentRes;
         private System.Windows.Forms.DataGridViewTextBoxColumn LargeCurrentRes;
+        private System.Windows.Forms.Button pasteButton;
     }
 }
 

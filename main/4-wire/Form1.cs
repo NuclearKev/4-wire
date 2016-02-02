@@ -32,24 +32,17 @@ namespace _4_wire
         DMM dmm1 = new DMM(1); //used for 4-wire and voltage
         DMM dmm2 = new DMM(2); //used for current
 
-        List<double> dmm1Res; //4-wire resistances
-        List<double> dmm2Res; 
-        List<double> dmmVolt;  //if for some reason you wish to see these values
-        List<double> dmmCurrent;
-
         public Form1()
         {
             InitializeComponent();
 
-            dmm1Res = new List<double>();
-            dmm2Res = new List<double>();
-            dmmVolt = new List<double>();
-            dmmCurrent = new List<double>();
+
+
 
             for (int i = 0; i < 20; i++)
             {
                 this.dataGridView1.Rows.Add();
-            }
+            }   
         }
 
         private void uploadButton_Click(object sender, EventArgs e)
@@ -57,6 +50,7 @@ namespace _4_wire
             var smallCurrent = new List<double>();
             var medCurrent = new List<double>();
             var largeCurrent = new List<double>();
+            var wire4 = new List<double>();
             var noPressure = new List<double>();
             var lightPressure = new List<double>();
             var medPressure = new List<double>();
@@ -74,6 +68,7 @@ namespace _4_wire
 
             for (int i = 0; i < 20; i++)
             {
+                wire4.Add(Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value));
                 smallCurrent.Add(Convert.ToDouble(dataGridView1.Rows[i].Cells[5].Value));
                 medCurrent.Add(Convert.ToDouble(dataGridView1.Rows[i].Cells[6].Value));
                 largeCurrent.Add(Convert.ToDouble(dataGridView1.Rows[i].Cells[7].Value));
@@ -83,7 +78,7 @@ namespace _4_wire
             uploadData(10, lightPressure, id, "2-wire", "LP");
             uploadData(10, medPressure, id, "2-wire", "MP");
             uploadData(10, heavyPressure, id, "2-wire", "HP");
-            uploadData(20, dmm1Res, id, "4-wire", " ");
+            uploadData(20, wire4, id, "4-wire", " ");
             uploadData(20, smallCurrent, id, "4-wire", "SC");
             uploadData(20, medCurrent, id, "4-wire", "MC");
             uploadData(20, largeCurrent, id, "4-wire", "LC");
@@ -91,6 +86,8 @@ namespace _4_wire
 
         private void wire4Button_Click(object sender, EventArgs e)
         {
+            List<double> dmm1Res = new List<double>(); //4-wire resistances
+
             for (int i = 0; i < 20; i++) //5 minutes
             {
                 dmm1Res.Add(dmm1.measure4Wire());
@@ -103,6 +100,10 @@ namespace _4_wire
 
         private void powerSupplyButtons_Click(object sender, EventArgs e)
         {
+            List<double> dmm2Res = new List<double>();
+            List<double> dmmVolt = new List<double>();
+            List<double> dmmCurrent = new List<double>();
+
             double currentFlag = dmm2.measureCurrent();
             int column;
 
@@ -125,7 +126,7 @@ namespace _4_wire
 		        return;
             }
 
-            Thread.Sleep(5000); //give it some time to relax
+            Thread.Sleep(1000); //give it some time to relax
 
             for (int i = 0; i < 20; i++) //5 minutes
             {
@@ -154,6 +155,21 @@ namespace _4_wire
 
                 res.EET321_Lab4Tables.InsertOnSubmit(data);
                 res.SubmitChanges();
+            }
+        }
+
+        private void pasteButton_Click(object sender, EventArgs e)
+        {
+            string dataCol = Clipboard.GetText();
+            string[] data;
+            int pasteCol = dataGridView1.CurrentCell.ColumnIndex;
+
+            data = dataCol.Split('\r');
+
+            for (int i = 0; i < data.Length; i++)
+            {
+                data[i] = data[i].TrimStart('\n');
+                this.dataGridView1.Rows[i].Cells[pasteCol].Value = data[i];
             }
         }
     }
